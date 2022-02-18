@@ -1,6 +1,10 @@
 # Banking-system
-This helps to create a banking system using c++ 
-code:
+This helps to create a banking system using c++ (object oriented programming)
+add stg useful  from your pov....
+thanks for watching :)
+owner: Sujan Shrestha : St. Lawrence KTM....
+ Source code below:
+ 
 
 #include <iostream>
 using namespace std;

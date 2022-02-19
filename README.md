@@ -24,6 +24,7 @@ public:
         cin >> gender;
         cout << "Enter your id: " << endl;
         cin >> id;
+        cout << "Your info has been sent to bank database....." << endl;
     }
     void printdetails()
     {

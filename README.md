@@ -5,65 +5,92 @@ thanks for watching :)
 owner: Sujan Shrestha : St. Lawrence KTM....
  Source code below:
  
-
-#include <iostream>
+ #include <iostream>
 using namespace std;
-class bank
+#include <cstdio>
+class Bank
 {
-public:
-    int age, id;
-    string name, gender;
+    string name;
+    int age;
+    int id;
+    int phone;
+    int amt;
 
-    void getinfo()
+public:
+    void open()
     {
         cout << "Enter your name: " << endl;
         cin >> name;
         cout << "Enter your age: " << endl;
         cin >> age;
-        cout << "Enter your gender: " << endl;
-        cin >> gender;
-        cout << "Enter your id: " << endl;
+        cout << "Enter  your id number: " << endl;
         cin >> id;
-        cout << "Your info has been sent to bank database....." << endl;
+        cout << "Enter your phone number: " << endl;
+        cin >> phone;
+        cout << "Your info has been sent to bank database:" << endl;
     }
-    void printdetails()
+    void showDetails()
     {
-        cout << "......Printing Details.... " << endl;
-        cout << "Account name:" << name << endl;
-        cout << "Account number:" << 123456 << endl;
-        cout << "Age:" << age << endl;
-        cout << "Gender: " << gender << endl;
+        cout << "..............Printing details............." << endl;
+        cout << "Account name: " << name << endl;
+        cout << "Age: " << age << endl;
         cout << "ID:" << id << endl;
+        cout << "Phone number:" << phone << endl;
+        cout << ".............................\n";
+    }
+    void sent()
+    {
+        cout << "Enter the amount in Rs you want to debit: " << endl;
+        cin >> amt;
+        cout << "Rs" << amt << " has been added to  your  account." << endl;
+    }
+    void check()
+    {
+    	cout <<".................." << endl;
+        cout << "Account name: " << name << endl;
+        cout << "Phone number:" << phone << endl;
+        cout << "Balance = RS:" << amt << endl;
     }
 };
 void menu();
 int main()
 {
-    bank ktm;
-    int a;
-    for (a = 0; a <= 3; a++)
+    Bank s1;
+    int x;
+    menu();
+    for (int i = 0; i < 5; i++)
     {
-        menu();
+    	cout << "...................."<< endl;
         cout << "Enter your choice: " << endl;
-        cin >> a;
+        cin >> x;
+        switch (x)
+        {
+        case 1:
+            s1.open();
+            break;
+        case 2:
+            s1.showDetails();
+            break;
+        case 3:
+            s1.sent();
+            break;
+        case 4:
+            s1.check();
+            break;
 
-        if (a == 1)
-        {
-            ktm.getinfo();
-        }
-        else if (a == 2)
-        {
-            ktm.printdetails();
+        default:
+            goto help;
         }
     }
+help:
     return 0;
 }
 void menu()
 {
     cout << "1. Open a account ." << endl;
     cout << "2. Show account details." << endl;
-    // Add this on version 2.0 hehehe
-    // cout << "3. Deposit amount." << endl;
-    // cout << "4. Withdraw money." << endl;
-    cout << "3. exit." << endl;
+    // Add this on version 2.0 hehehe1
+    cout << "3. Deposit amount." << endl;
+    cout << "4. Balance enquiry." << endl;
+    cout << "5. exit." << endl;
 }
